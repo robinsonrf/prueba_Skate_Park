@@ -1,0 +1,63 @@
+body {
+    color: #262e27 !important;
+    text-shadow: 0px 0px 1px black;
+    font-family: sans-serif;
+    text-align: center;
+    background-image: url("/assets/img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    
+  }
+  
+  #navbar{
+    z-index: 5;
+    width: 100vw;
+  }
+  td, th{
+      vertical-align: middle!important;
+  }
+  td div{
+      background-size: cover;
+      width: 60px;
+      height: 60px;
+  }
+  
+  tbody tr:nth-child(1) td div{
+          background-image: url("/assets/img/tony.jpg");
+  }
+  
+  tbody tr:nth-child(2) td div{
+      background-image: url("/assets/img/Evelien.jpg");
+  }
+  
+  tbody tr:nth-child(3) td div{
+      background-image: url("/assets/img/Danny.jpg");
+  }
+  
+  input{
+      text-align: center;
+  }
+
+  .hero-section{
+    background-image: url("/assets/img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
+
+  a{
+      text-decoration: none;
+      color: #262e27 !important;
+  }
+
+  i{
+      color: #262e27;
+  }
+  .m-top{
+        padding-top: 5rem !important;
+  }

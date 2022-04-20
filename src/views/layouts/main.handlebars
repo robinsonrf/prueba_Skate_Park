@@ -1,27 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="estilos.css" />
-  </head>
+<html lang="es">
+  {{>Head}}
   <body>
-    <h1>Skate Park</h1>
-
-    <div class="py-4">
-      <h2>Lista de participantes</h2>
-
-      <hr />
-
-      <table class="table table-dark">
+    {{>Nav}}
+    <div class="hero-section pt-5">
+    <div class="row m-auto container pt-5">
+      <div class="col-sm-6 pt-5">
+      <table class="table ">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -33,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="tr-skater">
             <th scope="row">1</th>
             <td><div></div></td>
             <td>Tony Hawk</td>
@@ -41,7 +26,7 @@
             <td>Kickflip</td>
             <td class="text-success font-weight-bold">Aprobado</td>
           </tr>
-          <tr>
+          <tr class="tr-skater">
             <th scope="row">2</th>
             <td><div></div></td>
             <td>Evelien Bouilliart</td>
@@ -49,7 +34,7 @@
             <td>Heelflip</td>
             <td class="text-success font-weight-bold">Aprobado</td>
           </tr>
-          <tr>
+          <tr class="tr-skater">
             <th scope="row">3</th>
             <td><div></div></td>
             <td>Danny Way</td>
@@ -57,10 +42,22 @@
             <td>Ollie</td>
             <td class="text-warning font-weight-bold">En revisión</td>
           </tr>
+          {{#each skaters}}
+            <tr>
+            <th scope="row">{{inc @index}}</th>
+            <td><div style="background-image: url('/assets/img/{{this.foto}}');"></div></td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td {{#if this.estado}} class="text-success font-weight-bold" {{else}}class="text-warning font-weight-bold" {{/if}}>{{#if this.estado}} Aprobado {{else}}En revisión {{/if}}</td>
+          </tr>
+          {{/each}}
         </tbody>
       </table>
-      <a href="#">Iniciar Sesión</a> |
-      <a href="#">Registrarme</a>
+      </div>
     </div>
+    </div>
+    {{>Footer}}
+    {{>CdnBody}}
   </body>
 </html>

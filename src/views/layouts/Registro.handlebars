@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{>Head}}
+  <body>
+    {{>Nav}}
+    <div class="row container m-auto pt-5 mb-5 m-top">
+      <div class="col-sm-6 py-5">
+      <h2>Registro de Usuario</h2>
+      <hr class="w-75 m-auto my-2" />
+
+      <form action="/skaters" method="POST" enctype="multipart/form-data">
+        <div class="form-group row w-75 m-auto">
+          <div class="form-group col-12 col-sm-6">
+            <label>Email</label>
+            <input name="email" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label>Nombre</label>
+            <input name="nombre" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label>Password</label>
+            <input name="password" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label>Repita la password</label>
+            <input name="confirmPass" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label>Años de experiencia</label>
+            <input name="aniosExp" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label>Especialidad</label>
+            <input name="especialidad" class="form-control m-auto" />
+          </div>
+          <div class="form-group col-12 col-sm-12">
+            <label>Foto de perfil</label>
+            <input name="foto" type="file" />
+          </div>
+        </div>
+        <button class="btn btn-info mt-1 mb-3">Registrarme</button>
+        <p>Ya tienes cuenta? <a href="/login"> Iniciar sesión</a></p>
+      </form>
+      </div>
+    </div>
+    {{>Footer}}
+    {{>CdnBody}}
+  </body>
+</html>

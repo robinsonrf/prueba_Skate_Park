@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>Head}}
+
+<body>
+  {{>Nav}}
+  <div class="row container m-auto pt-5 mb-5 m-top">
+    <div class="col-sm-6 py-5">
+      <h2>Administración</h2>
+      <hr class="w-75 m-auto my-2" />
+
+      <table class="table w-75 m-auto">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-skater">
+            <th scope="row">1</th>
+            <td>
+              <div></div>
+            </td>
+            <td>Tony Hawk</td>
+            <td>12</td>
+            <td>Kickflip</td>
+            <td><input type="checkbox" checked /></td>
+          </tr>
+          <tr class="tr-skater">
+            <th scope="row">2</th>
+            <td>
+              <div></div>
+            </td>
+            <td>Evelien Bouilliart</td>
+            <td>10</td>
+            <td>Heelflip</td>
+            <td><input type="checkbox" checked /></td>
+          </tr>
+          <tr class="tr-skater">
+            <th scope="row">3</th>
+            <td>
+              <div></div>
+            </td>
+            <td>Danny Way</td>
+            <td>8</td>
+            <td>Ollie</td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          {{#each skaters}}
+          <tr>
+            <th scope="row">{{inc @index}}</th>
+            <td>
+              <div style="background-image: url('/assets/img/{{this.foto}}');"></div>
+            </td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td><input class="status" name="{{this.id}}" type="checkbox"{{#if this.estado}} checked {{/if}}></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{>Footer}}
+  {{>CdnBody}}
+</body>
+
+</html>
